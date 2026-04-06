@@ -77,6 +77,17 @@ El símbolo `#` indica llave primaria y `*` indica atributo obligatorio.
 
 ---
 
+### 📓 Laboratorio_1_Hashes_y_Merkel.ipynb
+Este cuaderno contiene dos problemas relacionados con el uso de funciones hash y la estructura de árbol de Merkle, aplicada al análisis de cadenas de texto y la búsqueda de un hash objetivo.
+
+- **Problema 1:** Generación de un hash SHA-256 para una lista aleatoria de números del 0 al 9. El problema incluye una función para "desencriptar" el hash, intentando encontrar el orden original de los números que genera un hash específico a través de intentos aleatorios.
+  
+- **Problema 2:** Construcción de un **Árbol de Merkle** con un conjunto de cadenas de texto. Este problema incluye la implementación de una clase `node` para representar los nodos del árbol, junto con funciones para concatenar hashes, generar el árbol y buscar el hash raíz. El cuaderno también incluye una función de "desencriptación" para encontrar el orden de las cadenas que genera un hash raíz objetivo.
+
+Ambos problemas utilizan el algoritmo **SHA-256** de la librería `hashlib` para la generación de los hashes.
+
+---
+
 ## Tecnologías utilizadas
 - **Python 3** con Google Colab como entorno de desarrollo
 - Librerías: `random`, `faker`, `hashlib`, `pandas`, `re`, `time`, `os`
