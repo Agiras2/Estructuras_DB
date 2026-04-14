@@ -88,6 +88,51 @@ Ambos problemas utilizan el algoritmo **SHA-256** de la librería `hashlib` para
 
 ---
 
+## 🌳 Laboratorio 2: Estructuras Espaciales y KD-Trees
+
+Este laboratorio se centra en la optimización de consultas espaciales mediante la partición binaria del espacio, comparando estructuras avanzadas frente a métodos lineales tradicionales.
+
+### 🧩 Desafíos de Búsqueda Espacial
+
+#### 1. Implementación de KD-Tree (2D)
+Construcción de un árbol k-dimensional optimizado para coordenadas geográficas (Latitud, Longitud).
+* **Partición Dinámica:** División recursiva del plano alternando ejes en cada nivel de profundidad.
+* **Balanceo:** Uso de la mediana para garantizar una estructura de árbol equilibrada y búsquedas de complejidad $O(\log n)$.
+* **Geometría Esférica:** Integración de la **Fórmula de Haversine** para cálculos de distancia real en metros sobre la superficie terrestre.
+
+#### 2. Algoritmos de Búsqueda y Poda
+* **Nearest Neighbor (Vecino más cercano):** Búsqueda optimizada que descarta regiones enteras del mapa mediante poda espacial si la distancia mínima al plano supera al mejor candidato actual.
+* **Range Query (Búsqueda por Radio):** Filtrado eficiente de puntos dentro de un perímetro definido, minimizando el costo computacional.
+
+---
+
+## 📊 Análisis de Rendimiento (Benchmarking)
+
+Se incluye una suite de pruebas para contrastar la eficiencia entre una **Lista Ligada (Fuerza Bruta)** y el **KD-Tree**.
+
+| Algoritmo | Eficiencia (Speedup) | Caso de Uso Ideal |
+| :--- | :---: | :--- |
+| **Fuerza Bruta** | $1\text{x}$ (Base) | Datasets pequeños o desorganizados. |
+| **KD-Tree** | **23x - 45x** | Grandes volúmenes de datos geográficos homogéneos. |
+
+### 🛠️ Herramientas de Visualización
+El cuaderno integra un dashboard con `ipywidgets` y `matplotlib` que permite:
+* Visualizar las líneas de corte (particiones) del árbol en el mapa.
+* Realizar pruebas de rendimiento con re-randomización de datos en tiempo real.
+* Explorar gráficamente los nodos visitados vs. los nodos podados.
+
+> [!TIP]
+> **Dato Clave:** Mientras que la fuerza bruta escala de forma lineal $O(n)$, el KD-Tree permite realizar búsquedas en milisegundos incluso con miles de puntos, siendo fundamental en apps de logística y mapas.
+
+---
+
+## 🚀 Requisitos del Entorno
+* **Librerías:** `numpy`, `matplotlib`, `ipywidgets`, `hashlib`.
+* **Entorno:** Recomendado ejecutar en **Jupyter Lab** o **Google Colab** para habilitar la interactividad de los widgets.
+
+---
+
+
 ## Tecnologías utilizadas
 - **Python 3** con Google Colab como entorno de desarrollo
 - Librerías: `random`, `faker`, `hashlib`, `pandas`, `re`, `time`, `os`
@@ -95,3 +140,5 @@ Ambos problemas utilizan el algoritmo **SHA-256** de la librería `hashlib` para
 ---
 
 *Universidad de Antioquia — Ingeniería de Sistemas*
+
+*Autor: Andrés Giraldo Arismendy*
